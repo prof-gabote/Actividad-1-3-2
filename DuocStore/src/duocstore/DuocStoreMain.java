@@ -7,9 +7,9 @@ public class DuocStoreMain {
         CarritoDeCompras carritoCliente = new CarritoDeCompras();
         Cliente cliente = new Cliente("C001", "María López", carritoCliente);
 
-        Producto p1 = new Producto("P01", "Gorra", 9.99);
-        Producto p2 = new Producto("P02", "Polera", 12.50);
-        Producto p3 = new Producto("P03", "Botella", 5.25);
+        Producto p1 = new Producto("P01", "Gorra", 9990);
+        Producto p2 = new Producto("P02", "Polera", 12500);
+        Producto p3 = new Producto("P03", "Botella", 5250);
 
         // 2) Colaboración: Cliente → Carrito (pasando Producto)
         cliente.seleccionarProducto(p1);
@@ -21,7 +21,8 @@ public class DuocStoreMain {
         System.out.println(carritoCliente.resumen());
 
         // 4) Proceso de pago (Cliente ↔ Carrito)
-        boolean ok = cliente.pagar(30.00); // prueba con monto suficiente
+        boolean ok = cliente.pagar(5000); // prueba con monto suficiente
+        
         if (!ok) {
             // Si fallara, el carrito seguiría intacto
             System.out.println("Intentar nuevamente con un monto suficiente.");

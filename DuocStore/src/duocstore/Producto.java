@@ -6,26 +6,12 @@ public class Producto {
     private String nombre;
     private double precio;
 
-    public Producto(String idProducto, String nombre, double precio) {
-        this.idProducto = idProducto;
-        this.nombre = nombre;
-        this.precio = precio;
-    }
+    //Constructores
 
-    public String getIdProducto() {
-        return idProducto;
-    }
+    //Getters y Setters
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public double getPrecio() {
-        return precio;
-    }
-
+    //Método String comoLinea() que devuelve los datos del producto en una sola cadena
     public String comoLinea() {
-        return idProducto + "-" + nombre + "($" + String.format("%.2f", precio) + ")";
+        return ?? + "-" + ?? + "($" + ?? + ")";
     }
-    
 }

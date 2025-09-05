@@ -6,46 +6,38 @@ public class Cliente {
     private String nombre;
     private CarritoDeCompras carrito; // Colaboración: Cliente "tiene un" CarritoDeCompras
 
-    public Cliente(String idCliente, String nombre, CarritoDeCompras carrito) {
-        this.idCliente = idCliente;
-        this.nombre = nombre;
-        this.carrito = carrito; // Se inyecta desde main (no se instancia aquí)
-    }
+    //Construcctores
 
+    //Getters y Setters
+
+    //Método void seleccionarProducto(Producto p) que agrega un carrito a producto usando el método agregarProducto(Producto p) de carrito
     public void seleccionarProducto(Producto p) {
         if (carrito == null) {
             System.out.println("El cliente no tiene carrito asociado.");
             return;
         }
-        carrito.agregarProducto(p);
+        ??;
     }
     
-/**
-     * Simula el pago. Devuelve true si el monto cubre el total.
-     * Al pagar con éxito, se emite comprobante y se vacía el carrito.
-     */
+    //Método boolean pagar(double montoEntregado) que recibe un monto, comprueba que puede pagar el total e imprime un comprobante usando emitirComprobante() de más abajo
+    //Si el monto alcanza devuelve true, sino false
     public boolean pagar(double montoEntregado) {
-        if (carrito == null) return false;
+        if (carrito == null) return ??;
 
         double total = carrito.getTotal();
-        if (montoEntregado < total) {
-            System.out.println("Pago rechazado. Faltan $" + String.format("%.2f", (total - montoEntregado)));
-            return false;
+        if (??) {
+            System.out.println("Pago rechazado. Faltan $" + ??);
+            return ??
         }
 
-        double vuelto = montoEntregado - total;
+        double vuelto = ??
         emitirComprobante(montoEntregado, vuelto, carrito.getProductos(), total);
         carrito.vaciar();
-        return true;
+        return ??
     }
 
-    private void emitirComprobante(double monto, double vuelto, String detalleProductos, double total) {
-        System.out.println("\n=== COMPROBANTE DE COMPRA ===");
-        System.out.println("Cliente: " + nombre + " (ID: " + idCliente + ")");
-        System.out.println("Detalle: " + detalleProductos);
-        System.out.println("Total:   $" + String.format("%.2f", total));
-        System.out.println("Pagado:  $" + String.format("%.2f", monto));
-        System.out.println("Vuelto:  $" + String.format("%.2f", vuelto));
-        System.out.println("=============================\n");
+    //Método void emitirComprobante (double monto, double vuelto, String detalleProductos, double total) que solo imprime con System.out.println cada línea de la boleta
+    private void emitirComprobante(double monto, double vuelto, String detalleProductos, double total){
+        ??
     }
 }
